@@ -20,4 +20,4 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: qemu-system-xtensa
-        path: $HOME/xtensa-softmmu/qemu-system-xtensa
+        path: $GITHUB_WORKSPACE/xtensa-softmmu/qemu-system-xtensa
