@@ -13,10 +13,9 @@ jobs:
         sudo apt-get install build-essential libpixman-1-0 libpixman-1-dev libglib2.0-dev zlib1g-dev
     - name: Compile qemu
       run: |
-        cd $HOME
         mkdir qemu_esp32
         cd qemu_esp32
-        $HOME/qemu-xtensa-esp32/configure --disable-capstone --disable-werror --prefix=`pwd`/root --target-list=xtensa-softmmu
+        $GITHUB_WORKSPACE/qemu-xtensa-esp32/configure --disable-capstone --disable-werror --prefix=`pwd`/root --target-list=xtensa-softmmu
         make -j 2
     - uses: actions/upload-artifact@master
       with:
