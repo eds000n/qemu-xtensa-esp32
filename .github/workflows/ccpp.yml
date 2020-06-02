@@ -8,6 +8,7 @@ jobs:
         
     steps:
     - uses: actions/checkout@v2
+    - name: Install dependencies
       run: |
         sudo apt-get install build-essential libpixman-1-0 libpixman-1-dev libglib2.0-dev zlib1g-dev
     - name: Compile qemu
