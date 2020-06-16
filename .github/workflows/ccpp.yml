@@ -4,12 +4,12 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: multiarch/crossbuild
         
     steps:
     - uses: actions/checkout@v1
     - name: Install dependencies
-        sudo apt-get install build-essential libpixman-1-0 libpixman-1-dev libglib2.0-dev zlib1g-dev
+        sudo apt-get install build-essential libpixman-1-0 libpixman-1-dev libglib2.0-dev zlib1g-dev libpng libjpeg
     - name: Compile qemu
       run: |
         cd /home/runner/work/
